@@ -1,3 +1,8 @@
+# For this fork
+
+For maintenance purposes, this fork provides a converter for you to convert between Ant and Maven.  
+You can use converter.bat or converter.sh to do the conversion.   
+
 # Residence
 
 Residence is different from most protection plugins in that it aims for the users to be able to protect their own homes without having to bother the admin to do it. 
