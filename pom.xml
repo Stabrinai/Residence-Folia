@@ -201,6 +201,13 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>nl.pim16aap2</groupId>
+            <artifactId>BigDoors</artifactId>
+            <version>0.1.8.49</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/BigDoors.jar</systemPath>
+        </dependency>
+        <dependency>
             <groupId>de.bananaco</groupId>
             <artifactId>bPermissions</artifactId>
             <version>2.12.4</version>
