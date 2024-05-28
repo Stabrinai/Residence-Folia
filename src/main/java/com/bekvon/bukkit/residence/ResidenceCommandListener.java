@@ -316,6 +316,7 @@ public class ResidenceCommandListener implements CommandExecutor {
     }
 
     private boolean commandHelp(String[] args, boolean resadmin, CommandSender sender, Command command) {
+
         if (plugin.getHelpPages() == null)
             return false;
 
@@ -336,6 +337,7 @@ public class ResidenceCommandListener implements CommandExecutor {
         if (plugin.getHelpPages().containesEntry(helppath)) {
             plugin.getHelpPages().printHelp(sender, page, helppath, resadmin);
         }
+
         return true;
     }
 
