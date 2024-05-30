@@ -985,7 +985,7 @@ public class ResidencePlayerListener implements Listener {
 
     private boolean isContainer(Material mat, Block block) {
         return FlagPermissions.getMaterialUseFlagList().containsKey(mat) && FlagPermissions.getMaterialUseFlagList().get(mat).equals(Flags.container)
-            || plugin.getConfigManager().getCustomContainers().contains(CMIMaterial.get(block));
+            || plugin.getConfigManager().getCustomContainers().contains(block.getType());
     }
 
     private boolean isCanUseEntity_RClickOnly(Material mat, Block block) {
@@ -1042,7 +1042,7 @@ public class ResidencePlayerListener implements Listener {
                 return true;
         }
 
-        return plugin.getConfigManager().getCustomRightClick().contains(CMIMaterial.get(block));
+        return plugin.getConfigManager().getCustomRightClick().contains(block.getType());
     }
 
     public static boolean isCanUseEntity_BothClick(Material mat, Block block) {
@@ -1067,7 +1067,7 @@ public class ResidencePlayerListener implements Listener {
         case DRAGON_EGG:
             return true;
         default:
-            return Residence.getInstance().getConfigManager().getCustomBothClick().contains(CMIMaterial.get(block));
+            return Residence.getInstance().getConfigManager().getCustomBothClick().contains(block.getType());
         }
     }
 
@@ -1534,7 +1534,7 @@ public class ResidencePlayerListener implements Listener {
                 }
             }
 
-            if (plugin.getConfigManager().getCustomContainers().contains(blockM)) {
+            if (plugin.getConfigManager().getCustomContainers().contains(mat)) {
                 if (!perms.playerHas(player, Flags.container, hasuse)
                     || !ResPerm.bypass_container.hasPermission(player, 10000L)) {
                     event.setCancelled(true);
@@ -1543,12 +1543,12 @@ public class ResidencePlayerListener implements Listener {
                 }
             }
 
-            if (plugin.getConfigManager().getCustomBothClick().contains(blockM) && !hasuse) {
+            if (plugin.getConfigManager().getCustomBothClick().contains(mat) && !hasuse) {
                 event.setCancelled(true);
                 plugin.msg(player, lm.Flag_Deny, Flags.use);
                 return;
             }
-            if (plugin.getConfigManager().getCustomRightClick().contains(blockM) && event.getAction() == Action.RIGHT_CLICK_BLOCK && !hasuse) {
+            if (plugin.getConfigManager().getCustomRightClick().contains(mat) && event.getAction() == Action.RIGHT_CLICK_BLOCK && !hasuse) {
                 event.setCancelled(true);
                 plugin.msg(player, lm.Flag_Deny, Flags.use);
             }

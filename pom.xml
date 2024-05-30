@@ -142,9 +142,9 @@
         <dependency>
             <groupId>com.Zirps</groupId>
             <artifactId>CMILib</artifactId>
-            <version>1.4.7.14</version>
+            <version>1.4.7.15</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/CMILib1.4.7.14.jar</systemPath>
+            <systemPath>${project.basedir}/libs/CMILib1.4.7.15.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.kingdoms</groupId>
